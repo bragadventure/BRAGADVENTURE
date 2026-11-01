@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- font awesome cdn link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    />
+
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- header section start-->
+    <header>
+      <input type="checkbox" name="" id="toggler" />
+      <label for="toggler" class="fas fa-bars"></label>
+      <a href="#" class="logo">BRAGA<span>DVENTURE</span></a>
+
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+
+        <!-- Dropdown Package -->
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >Package <i class="fas fa-caret-down"></i
+          ></a>
+          <div class="dropdown-menu">
+            <a href="package/rafting.html">Rafting Cianten</a>
+            <a href="package/outbound.html">Outbound</a>
+            <a href="package/offroad.html">Off-Road</a>
+            <a href="package/paintball.html">Paintball</a>
+            <a href="package/tracking.html">Tracking</a>
+            <a href="package/outing&gathering.html">Gathering/Outing</a>
+          </div>
+        </div>
+
+        <a href="#location">Location</a>
+      </nav>
+
+      <div class="icons">
+        <a href="#" class="fss"></a>
+      </div>
+    </header>
+
+    <!-- TARUH SCRIPT INI DI PALING BAWAH FILE SEBELUM TAG </body> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const dropdownToggle = document.querySelector(".dropdown-toggle");
+        const dropdown = document.querySelector(".dropdown");
+
+        dropdownToggle.addEventListener("click", (e) => {
+          // Aktif hanya di layar HP / Tablet
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            dropdown.classList.toggle("active");
+          }
+        });
+      });
+    </script>
+    <!-- header section end -->
+
+    <!-- home section start-->
+    <section class="hero" id="home">
+      <main class="content">
+        <h2>YOUR JOURNEY BUDDY!</h2>
+        <h3>Bosan?<span>Liburan Aja!</span></h3>
+        <p>
+          BRAGA ADVENTURE
+          <span
+            >menyediakan berbagai macam akomodasi wahana yang dapat dicoba.
+            Penasaran?</span
+          >
+        </p>
+        <a href="#paket" class="btn">Lihat Paket</a>
+      </main>
+    </section>
+    <!-- home section end-->
+    <!-- about section start -->
+    <section id="about" class="about">
+      <h2 class="heading"><span>Tentang</span> Kami</h2>
+
+      <!-- KODE UTAMA ABOUT ANDA (UTUH DAN AMAN) -->
+      <div class="row">
+        <div class="video-container">
+          <video src="icons/about.mp4" loop autoplay muted></video>
+          <h3>Best Adventure Seller</h3>
+        </div>
+
+        <div class="content">
+          <h3>BRAGA ADVENTURE</h3>
+          <p>
+            adalah Event Organizer yang sudah beroperasi sejak tahun 2012,
+            bergerak dalam bidang Adventure. Berisi tim dengan orang-orang
+            profesional dengan segudang pengalaman sejak tahun (tahun). Kami
+            menyediakan berbagai macam paket liburan, seperti Rafting,
+            Paintball, Outbound, Off-road, Gathering/Outing. Dalam semua paket
+            yang kami sediakan, kami menjamin bahwa liburan anda akan menjadi
+            sebuah perjalanan menyenangkan yang tak akan terlupakan.
+          </p>
+        </div>
+      </div>
+
+      <!-- SEKSI SOSMED FEED PREMIUM (TERINTEGRASI DI BAWAH ABOUT) -->
+      <div class="braga-social-wrapper">
+        <div class="braga-social-header">
+          <span class="braga-social-sub">Live From Our Feed</span>
+          <h3 class="braga-social-title">Petualangan Terbaru Kami</h3>
+        </div>
+
+        <div class="braga-social-grid">
+          <!-- Postingan 1: Instagram (Terbaru - Tetap Muncul di HP) -->
+          <div class="braga-social-card braga-social-tilt-l">
+            <div class="braga-social-img">
+              <img
+                src="../BRAGADVENTURE/paket/rafting.jpg"
+                alt="Instagram Update"
+              />
+              <div class="braga-social-badge braga-social-ig">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <div class="braga-social-overlay">
+                <div class="braga-social-body">
+                  <p class="braga-social-caption">
+                    Keseruan rafting tim korporat minggu lalu! 🔥 #bragadventure
+                  </p>
+                  <a
+                    href="URL_POSTINGAN_IG_1"
+                    target="_blank"
+                    class="braga-social-btn"
+                    >Lihat Postingan</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Postingan 2: TikTok (Terbaru - Tetap Muncul di HP) -->
+          <div class="braga-social-card braga-social-tilt-r">
+            <div class="braga-social-img">
+              <img
+                src="../BRAGADVENTURE/paket/rafting.jpg"
+                alt="TikTok Update"
+              />
+              <div class="braga-social-badge braga-social-tt">
+                <i class="fab fa-tiktok"></i>
+              </div>
+              <div class="braga-social-overlay">
+                <div class="braga-social-body">
+                  <p class="braga-social-caption">
+                    POV: Detik-detik perahu kebalik di jeram Welcome! 🌊
+                  </p>
+                  <a
+                    href="URL_POSTINGAN_TIKTOK_1"
+                    target="_blank"
+                    class="braga-social-btn"
+                    >Tonton Video</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Postingan 3: Instagram (Lama - Otomatis Sembunyi di HP 768px & 450px) -->
+          <div class="braga-social-card braga-social-desktop">
+            <div class="braga-social-img">
+              <img
+                src="../BRAGADVENTURE/paket/rafting.jpg"
+                alt="Instagram Update"
+              />
+              <div class="braga-social-badge braga-social-ig">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <div class="braga-social-overlay">
+                <div class="braga-social-body">
+                  <p class="braga-social-caption">
+                    Persiapan Paintball Battle hari ini. Are you ready?
+                  </p>
+                  <a
+                    href="URL_POSTINGAN_IG_2"
+                    target="_blank"
+                    class="braga-social-btn"
+                    >Lihat Postingan</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Postingan 4: TikTok (Lama - Otomatis Sembunyi di HP 768px & 450px) -->
+          <div
+            class="braga-social-card braga-social-tilt-l braga-social-desktop"
+          >
+            <div class="braga-social-img">
+              <img
+                src="../BRAGADVENTURE/paket/rafting.jpg"
+                alt="TikTok Update"
+              />
+              <div class="braga-social-badge braga-social-tt">
+                <i class="fab fa-tiktok"></i>
+              </div>
+              <div class="braga-social-overlay">
+                <div class="braga-social-body">
+                  <p class="braga-social-caption">
+                    Tips packing baju untuk trip Offroad 4x4 🚗💨
+                  </p>
+                  <a
+                    href="URL_POSTINGAN_TIKTOK_2"
+                    target="_blank"
+                    class="braga-social-btn"
+                    >Tonton Video</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about section end -->
+
+    <!-- paralax start -->
+    <!-- <section class="parallax">
+      <div class="parallax-inner"></div>
+    </section> -->
+
+    <!-- paralax end -->
+
+    <!-- why choose us start -->
+    <div class="parallax">
+      <div class="parallax-inner">
+        <main class="content">
+          <!-- ... isi content hero Anda ... -->
+        </main>
+      </div>
+    </div>
+    <section class="why-us" id="why-us">
+      <!-- Semua poin dimasukkan ke dalam satu kotak besar yang sama -->
+      <div class="why-us-single-card">
+        <h2 class="section-title">WHY CHOOSE US?</h2>
+
+        <div class="features-list">
+          <div class="feature-item fade-on-scroll" style="--delay: 1">
+            <!-- Menggunakan ikon tangan bersalaman yang melambangkan hospitality / pelayanan -->
+            <div class="icon"><i class="fa-regular fa-handshake"></i></div>
+            <div class="text-content">
+              <h3>Good Service</h3>
+              <p>
+                Pelayanan prima dan ramah yang siap menemani seluruh perjalanan
+                wisata Anda tanpa khawatir.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-item fade-on-scroll" style="--delay: 2">
+            <!-- Menggunakan ikon jam dengan tanda panah memutar melambangkan respon cepat 24/7 -->
+            <div class="icon"><i class="fa-solid fa-headset"></i></div>
+            <div class="text-content">
+              <h3>Fast Response</h3>
+              <p>
+                Tim admin kami sigap membantu kebutuhan dan pemesanan tiket Anda
+                kapan saja dengan cepat.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-item fade-on-scroll" style="--delay: 3">
+            <!-- Menggunakan ikon pin peta dengan lingkaran deteksi lokasi yang clean -->
+            <div class="icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div class="text-content">
+              <h3>Strategic Location</h3>
+              <p>
+                Akses lokasi wahana yang sangat mudah dijangkau dari berbagai
+                rute transportasi utama.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-item fade-on-scroll" style="--delay: 4">
+            <!-- Menggunakan ikon label harga/diskon yang melambangkan value for money -->
+            <div class="icon"><i class="fa-solid fa-tags"></i></div>
+            <div class="text-content">
+              <h3>Harga Terjangkau</h3>
+              <p>
+                Nikmati seluruh fasilitas dan keseruan wahana premium dengan
+                harga yang sangat ramah di kantong.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- why choose us end -->
+
+    <!-- product section start -->
+    <section class="paket" id="paket">
+      <h2 class="heading">Paket <span> Kami</span></h2>
+      <div class="box-container">
+        <div class="box">
+          <span class="number">01</span>
+          <div class="image">
+            <img src="paket/rafting.jpg" alt="" />
+            <div class="icons">
+              <a href="package/rafting.html" class="learn-more"
+                >Lihat Detail Paket <span class="arrow"></span
+              ></a>
+            </div>
+          </div>
+          <div class="content">
+            <h3>RAFTING CIANTEN</h3>
+            <div class="price">Rp 150.000,00</div>
+          </div>
+        </div>
+
+        <div class="box">
+          <span class="number">02</span>
+          <div class="image">
+            <img src="paket/rafting.jpg" alt="" />
+            <div class="icons">
+              <a href="package/outbound.html" class="learn-more"
+                >Lihat Detail Paket <span class="arrow"></span
+              ></a>
+            </div>
+          </div>
+          <div class="content">
+            <h3>OUTBOUND</h3>
+            <div class="price">Rp 350.000,00</div>
+          </div>
+        </div>
+
+        <div class="box">
+          <span class="number">03</span>
+          <div class="image">
+            <img src="paket/rafting.jpg" alt="" />
+            <div class="icons">
+              <a href="package/offroad.html" class="learn-more"
+                >Lihat Detail Paket <span class="arrow"></span
+              ></a>
+            </div>
+          </div>
+          <div class="content">
+            <h3>OFF-ROAD</h3>
+            <div class="price">Rp 500.000,00</div>
+          </div>
+        </div>
+
+        <div class="box">
+          <span class="number">04</span>
+          <div class="image">
+            <img src="paket/rafting.jpg" alt="" />
+            <div class="icons">
+              <a href="package/paintball.html" class="learn-more"
+                >Lihat Detail Paket <span class="arrow"></span
+              ></a>
+            </div>
+          </div>
+          <div class="content">
+            <h3>PAINTBALL</h3>
+            <div class="price">Rp 250.000,00</div>
+          </div>
+        </div>
+
+        <div class="box">
+          <span class="number">05</span>
+          <div class="image">
+            <img src="paket/rafting.jpg" alt="" />
+            <div class="icons">
+              <a href="package/tracking.html" class="learn-more"
+                >Lihat Detail Paket <span class="arrow"></span
+              ></a>
+            </div>
+          </div>
+          <div class="content">
+            <h3>TRACKING</h3>
+            <div class="price">Rp 450.000,00</div>
+          </div>
+        </div>
+
+        <div class="box">
+          <span class="number">06</span>
+          <div class="image">
+            <img src="paket/rafting.jpg" alt="" />
+            <div class="icons">
+              <a href="package/outing&gathering.html" class="learn-more"
+                >Lihat Detail Paket <span class="arrow"></span
+              ></a>
+            </div>
+          </div>
+          <div class="content">
+            <h3>GATHERING/OUTING</h3>
+            <div class="price">Rp 650.000,00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- products section end -->
+
+    <!-- wa button start -->
+    <!-- Tombol WA Floating Container -->
+    <div class="wa-floating-container">
+      <!-- Ganti 628xxx dengan nomor tujuan dan text= dengan isi template chat -->
+      <a
+        href="https://wa.me/62895331001061?text=Halo,+BRAGADVENTURE!"
+        target="_blank"
+        class="wa-button"
+        aria-label="Hubungi kami via WhatsApp"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <!-- Bubble Text -->
+      <div class="wa-chat-bubble" id="waBubble">Ada yang bisa kami bantu?</div>
+    </div>
+
+    <!-- wa button end -->
+
+    <!-- location section start -->
+    <section class="location" id="location">
+      <div class="location-container">
+        <!-- INFO ALAMAT & JAM OPERASIONAL -->
+        <div class="location-text">
+          <h2 class="section-title">OUR LOCATION</h2>
+          <p class="desc">
+            Kunjungi wahana premium kami dan rasakan pengalaman liburan terbaik
+            yang tak terlupakan bersama BRAGA ADVENTURE.
+          </p>
+
+          <div class="info-blocks">
+            <div class="block-item">
+              <h3>Alamat Utama</h3>
+              <p>Jl. Raya Puncak Km. 77, Bogor, Jawa Barat, Indonesia</p>
+            </div>
+
+            <div class="block-item">
+              <h3>Jam Operasional</h3>
+              <p>Setiap Hari: 08.00 - 17.00 WIB</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PETA INTERAKTIF -->
+        <div class="location-map">
+          <iframe
+            src="https://google.com"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- location section end -->
+
+    <!-- Masukkan link ini di dalam tag <head> HTML Anda -->
+    <link rel="stylesheet" href="https://cloudflare.com" />
+
+    <!-- footer section start -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Bagian Kiri: Brand, Tagline, & Sosial Media -->
+        <div class="footer-brand">
+          <a href="#" class="logo">BRAGADVENTURE</a>
+          <p>
+            Akomodasi wahana dan petualangan premium terbaik untuk liburan Anda.
+          </p>
+          <div class="footer-socials">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://tiktok.com" target="_blank" aria-label="TikTok"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Bagian Tengah: Menu Navigasi Cepat -->
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#paket">Package</a></li>
+            <li><a href="#location">Location</a></li>
+          </ul>
+        </div>
+
+        <!-- BARIS CR DENGAN GRID FOTO SEGITIGA ABSTRAK -->
+        <div class="footer-bottom-grid">
+          <div class="footer-photo-grid">
+            <div class="grid-img item-1">
+              <img src="../BRAGADVENTURE/paket/rafting.jpg" alt="Exofunture" />
+            </div>
+            <div class="grid-img item-2">
+              <img src="../BRAGADVENTURE/paket/rafting.jpg" alt="Exofunture" />
+            </div>
+            <div class="grid-img item-3">
+              <img src="../BRAGADVENTURE/paket/rafting.jpg" alt="Exofunture" />
+            </div>
+            <div class="grid-img item-4">
+              <img src="../BRAGADVENTURE/paket/rafting.jpg" alt="Exofunture" />
+            </div>
+            <div class="grid-img item-5">
+              <img src="../BRAGADVENTURE/paket/rafting.jpg" alt="Exofunture" />
+            </div>
+            <div class="grid-img item-6">
+              <img src="../BRAGADVENTURE/paket/rafting.jpg" alt="Exofunture" />
+            </div>
+            <div class="grid-img item-7">
+              <img src="../BRAGADVENTURE/paket/rafting.jpg" alt="Exofunture" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bagian Bawah: Hak Cipta -->
+      <div class="footer-cr">
+        <p>&copy; 2026 BRAGADVENTURE. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- footer section end -->
+
+    <!-- my javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

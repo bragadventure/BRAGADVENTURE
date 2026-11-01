@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- font awesome cdn link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    />
+
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="../css/another.css" />
+  </head>
+  <body>
+    <!-- header section start-->
+    <header>
+      <input type="checkbox" name="" id="toggler" />
+      <label for="toggler" class="fas fa-bars"></label>
+      <a href="#" class="logo">EXOFUNTURE</a>
+
+      <nav class="navbar">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About Us</a>
+
+        <!-- Dropdown Package -->
+        <div class="dropdown">
+          <a href="#paket" class="dropdown-toggle"
+            >Package <i class="fas fa-caret-down"></i
+          ></a>
+          <div class="dropdown-menu">
+            <a href="../package/rafting.html">Rafting Cianten</a>
+            <a href="../package/outbound.html">Outbound</a>
+            <a href="../package/offroad.html">Off-Road</a>
+            <a href="../package/paintball.html">Paintball</a>
+            <a href="../package/tracking.html">Tracking</a>
+            <a href="../package/outing&gathering.html">Gathering/Outing</a>
+          </div>
+        </div>
+
+        <a href="../index.html#location">Location</a>
+      </nav>
+
+      <div class="icons">
+        <a href="#" class="fss"></a>
+      </div>
+    </header>
+
+    <!-- TARUH SCRIPT INI DI PALING BAWAH FILE SEBELUM TAG </body> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const dropdownToggle = document.querySelector(".dropdown-toggle");
+        const dropdown = document.querySelector(".dropdown");
+
+        dropdownToggle.addEventListener("click", (e) => {
+          // Aktif hanya di layar HP / Tablet
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            dropdown.classList.toggle("active");
+          }
+        });
+      });
+    </script>
+    <!-- header section end -->
+    <!-- hero section start -->
+    <section class="premium-hero" id="package">
+      <!-- Elemen Hiasan Background (Aesthetic Glow) -->
+      <div class="bg-glow glow-1"></div>
+      <div class="bg-glow glow-2"></div>
+
+      <div class="hero-wrapper">
+        <!-- Kolom Kiri: Kata-kata Menarik & Penawaran Paket -->
+        <div class="hero-text-side">
+          <h1>ESCAPE THE ORDINARY. <br /><span>LIVE THE THRILL.</span></h1>
+          <p>
+            Bosan dengan rutinitas yang begitu-begitu saja? Temukan sensasi
+            menantang arus rakit bersama
+            <strong>EXOFUNTURE</strong>. Paket eksklusif yang dirancang khusus
+            untuk memacu adrenalin, menyatukan kekompakan, dan mengukir cerita
+            epik di tengah derasnya jeram alam liar.
+          </p>
+          <div class="hero-actions">
+            <a href="#Package" class="btn-primary">Jelajahi Paket</a>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Rangkaian Kartu Paket Interaktif (Efek Pop-up) -->
+        <div class="hero-gallery-side">
+          <!-- KARTU 1 -->
+          <div class="aesthetic-card">
+            <div class="card-image">
+              <img src="../paket/rafting2.jpg" alt="Rafting Single" />
+            </div>
+            <div class="card-info">
+              <h3>Rapid Rush</h3>
+              <p>Sensasi tak terlupakan menaklukkan jeram grade III+.</p>
+            </div>
+          </div>
+
+          <!-- KARTU 2 -->
+          <div class="aesthetic-card">
+            <div class="card-image">
+              <img src="../paket/rafting3.jpg" alt="Rafting Group" />
+            </div>
+            <div class="card-info"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- hero section end -->
+    <!-- rincian paket start -->
+    <section class="detail-package" id="Package">
+      <div class="package-container">
+        <!-- Bagian Kiri: Murni Galeri Foto & Kotak Biru (Bersih & Aman) -->
+        <div class="package-gallery">
+          <div class="main-img-box">
+            <img src="../paket/rafting.jpg" alt="Rafting Utama" />
+          </div>
+          <div class="sub-img-box">
+            <img src="../paket/rafting5.jpg" alt="Aktivitas Rafting" />
+          </div>
+          <div class="sub-img-box accent-box">
+            <h4>Sungai Cianten</h4>
+            <p>12 KM Arus Menantang & Eksotis</p>
+          </div>
+        </div>
+
+        <!-- Bagian Kanan: Informasi, Pilihan Harga Baru, & 7 Poin -->
+        <div class="package-info">
+          <span class="tagline">RINCIAN PAKET LENGKAP</span>
+          <h2 class="title">Rafting Sungai Cianten</h2>
+
+          <p class="description">
+            Dapatkan pengalaman petualangan arung jeram terbaik di Bogor dengan
+            fasilitas super lengkap. Berikut adalah rincian detail komitmen
+            pelayanan kami:
+          </p>
+
+          <!-- STRUKTUR HARGA BARU: Ditaruh di kanan agar layout seimbang dan estetik -->
+          <div class="price-options-container">
+            <div class="price-tier active">
+              <span class="tier-label">Hemat Group</span>
+              <h3>Rp 200.000<small>/pax</small></h3>
+              <span class="tier-pax">Min. 12 Pax</span>
+            </div>
+            <div class="price-tier">
+              <span class="tier-label">Reguler</span>
+              <h3>Rp 235.000<small>/pax</small></h3>
+              <span class="tier-pax">Min. 5 Pax</span>
+            </div>
+          </div>
+
+          <!-- 7 Poin Utama Rincian Paket -->
+          <ul class="details-list">
+            <li>
+              <span class="list-num">01</span>
+              <div class="list-text">
+                <h5>Jalur Pengarungan Panjang</h5>
+                <p>
+                  Mengarungi derasnya aliran air Sungai Cianten sepanjang total
+                  12 KM dengan durasi sekitar 2-2.5 jam.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="list-num">02</span>
+              <div class="list-text">
+                <h5>Peralatan Keamanan Internasional</h5>
+                <p>
+                  Fasilitas lengkap berupa helm pelindung kepala, jaket
+                  pelampung (body rafting), dan dayung standar safety.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="list-num">03</span>
+              <div class="list-text">
+                <h5>Pemandu & Tim Rescue Bersertifikat</h5>
+                <p>
+                  Setiap perahu didampingi oleh guide lokal profesional yang
+                  terlatih dan siap siaga menjaga keamanan Anda.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="list-num">04</span>
+              <div class="list-text">
+                <h5>Makan Siang & Kelapa Muda</h5>
+                <p>
+                  Sajian makan siang prasmanan khas pedesaan setelah selesai
+                  rafting beserta suguhan kelapa muda segar.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="list-num">05</span>
+              <div class="list-text">
+                <h5>Fasilitas Ruang Bilas & Loker</h5>
+                <p>
+                  Akses gratis ke fasilitas kamar mandi bilas yang bersih, ruang
+                  ganti pakaian, dan area penitipan barang aman.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="list-num">06</span>
+              <div class="list-text">
+                <h5>Transportasi Lokal (Pick Up)</h5>
+                <p>
+                  Layanan antar-jemput menggunakan kendaraan lokal dari titik
+                  kumpul (basecamp) menuju lokasi start rafting.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="list-num">07</span>
+              <div class="list-text">
+                <h5>Asuransi Keselamatan Resmi</h5>
+                <p>
+                  Seluruh peserta paket wisata arung jeram ini sudah dilindungi
+                  asuransi jiwa selama aktivitas pengarungan berlangsung.
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Area Aksi Pemesanan -->
+          <div class="action-area">
+            <p class="notes">
+              * Silakan hubungi admin kami untuk ketersediaan jadwal
+              pengarungan.
+            </p>
+            <a
+              href="https://wa.me/62895331001061?text=Halo,+EXOFUNTURE!"
+              class="btn-book"
+              >Hubungi via WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- rincian paket end -->
+
+    <!-- dokumentasi start -->
+    <!-- Documentation Section Start -->
+    <section class="documentation">
+      <div class="doc-title-box">
+        <span class="doc-tagline">DOKUMENTASI KESERUAN</span>
+        <h3 class="doc-title">Koleksi Foto Petualangan</h3>
+      </div>
+
+      <!-- Pembungkus Kereta Marquee -->
+      <div class="marquee-container">
+        <div class="marquee-track">
+          <!-- 7 Foto Utama -->
+          <div class="marquee-item">
+            <img src="../paket/rafting7.jpg" alt="Dokumentasi 1" />
+          </div>
+          <div class="marquee-item">
+            <img src="../paket/rafting1.jpg" alt="Dokumentasi 2" />
+          </div>
+          <div class="marquee-item">
+            <img src="../paket/rafting2.jpg" alt="Dokumentasi 3" />
+          </div>
+          <div class="marquee-item">
+            <img src="../paket/rafting3.jpg" alt="Dokumentasi 4" />
+          </div>
+          <div class="marquee-item">
+            <img src="../paket/rafting4.jpg" alt="Dokumentasi 5" />
+          </div>
+          <div class="marquee-item">
+            <img src="../paket/rafting5.jpg" alt="Dokumentasi 6" />
+          </div>
+          <div class="marquee-item">
+            <img src="../paket/rafting6.jpg" alt="Dokumentasi 7" />
+          </div>
+
+          <!-- Kloning 7 Foto (Wajib ada untuk menyambung looping tanpa putus) -->
+          <div class="marquee-item">
+            <img src="../paket/rafting7.jpg" alt="Dokumentasi 1" />
+          </div>
+          <div class="marquee-item">
+            <img src="../paket/rafting2.jpg" alt="Dokumentasi 2" />
+          </div>
+          <div class="marquee-item">
+            <img src="../paket/rafting3.jpg" alt="Dokumentasi 3" />
+          </div>
+          <div class="marquee-item">
+            <img src="../paket/rafting4.jpg" alt="Dokumentasi 4" />
+          </div>
+          <div class="marquee-item">
+            <img src="../paket/rafting5.jpg" alt="Dokumentasi 5" />
+          </div>
+          <div class="marquee-item">
+            <img src="../paket/rafting6.jpg" alt="Dokumentasi 6" />
+          </div>
+          <div class="marquee-item">
+            <img src="../paket/rafting4.jpg" alt="Dokumentasi 7" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Documentation Section End -->
+
+    <!-- dokumentasi end -->
+    <!-- wa button start -->
+    <div class="wa-floating-container">
+      <a
+        href="https://wa.me."
+        target="_blank"
+        class="wa-button"
+        aria-label="Hubungi kami via WhatsApp"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <!-- Bubble Text -->
+      <div class="wa-chat-bubble" id="waBubbleSecondPage">
+        Ada yang bisa kami bantu?
+      </div>
+    </div>
+
+    <!-- SCRIPT MANDIRI KHUSUS SECOND PAGE (ANTI BENTROK) -->
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const bubbleSec = document.getElementById("waBubbleSecondPage");
+        if (bubbleSec) {
+          setTimeout(() => {
+            bubbleSec.classList.add("show");
+          }, 2000); // Jeda 2 detik langsung muncul smooth
+        }
+      });
+    </script>
+    <!-- wa button end -->
+
+    <!-- footer section start -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Bagian Kiri: Brand & Tagline Singkat -->
+        <div class="footer-brand">
+          <a href="#" class="logo">EXOFUNTURE</a>
+          <p>
+            Akomodasi wahana dan petualangan premium terbaik untuk liburan Anda.
+          </p>
+        </div>
+
+        <!-- Bagian Tengah: Menu Navigasi Cepat -->
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../index.html#about">About Us</a></li>
+            <li><a href="../index.html#paket">Package</a></li>
+            <li><a href="../index.html#location">Location</a></li>
+          </ul>
+        </div>
+
+        <!-- BARIS CR DENGAN GRID FOTO SEGITIGA ABSTRAK -->
+        <div class="footer-bottom-grid">
+          <div class="footer-photo-grid">
+            <div class="grid-img item-1">
+              <img src="../paket/rafting.jpg" alt="Exofunture" />
+            </div>
+            <div class="grid-img item-2">
+              <img src="../paket/rafting.jpg" alt="Exofunture" />
+            </div>
+            <div class="grid-img item-3">
+              <img src="../paket/rafting.jpg" alt="Exofunture" />
+            </div>
+            <div class="grid-img item-4">
+              <img src="../paket/rafting.jpg" alt="Exofunture" />
+            </div>
+            <div class="grid-img item-5">
+              <img src="../paket/rafting.jpg" alt="Exofunture" />
+            </div>
+            <div class="grid-img item-6">
+              <img src="../paket/rafting.jpg" alt="Exofunture" />
+            </div>
+            <div class="grid-img item-7">
+              <img src="../paket/rafting.jpg" alt="Exofunture" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bagian Kanan: Hak Cipta -->
+      <div class="footer-cr">
+        <p>&copy; 2026 EXOFUNTURE. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- footer section end -->
+
+    <!-- my javascript -->
+    <script src="../js/script.js"></script>
+  </body>
+</html>
