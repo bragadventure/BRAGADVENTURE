@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const images = [
   "../paket/rafting.jpg",
-  "../paket/rafting2.jpg",
+  "../paket/rafting2.JPG",
   "../paket/rafting3.jpg",
   "../paket/rafting6.jpg",
 ];
