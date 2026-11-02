@@ -50,20 +50,33 @@ document.addEventListener("DOMContentLoaded", function () {
 // why choose us section end
 
 const images = [
-  "../paket/rafting.jpg",
-  "../paket/rafting2.JPG",
-  "../paket/rafting3.jpg",
-  "../paket/rafting6.jpg",
+  "paket/rafting.jpg",
+  "paket/rafting2.JPG",
+  "paket/rafting3.jpg",
+  "paket/rafting6.jpg",
 ];
 
 let currentIndex = 0;
 const heroSection = document.querySelector(".hero");
 
+// Fungsi untuk memastikan gambar di-load dulu sebelum dipasang biar tidak ada white flash
+function preloadImages() {
+  images.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
+}
+preloadImages();
+
 // Inisialisasi pasang gambar pertama saat halaman dimuat
-heroSection.style.setProperty("--bg-image", `url("${images[currentIndex]}")`);
+if (heroSection) {
+  heroSection.style.setProperty("--bg-image", `url("${images[currentIndex]}")`);
+}
 
 function changeBackground() {
-  // 1. Tambahkan class untuk memicu animasi blur dan peredupan di CSS
+  if (!heroSection) return;
+
+  // 1. Tambahkan class untuk memicu animasi blur, peredupan, dan zoom di CSS
   heroSection.classList.add("bg-fade");
 
   // 2. Ganti url gambar tepat di milidetik ke-200 (titik tergelap versi CSS)
