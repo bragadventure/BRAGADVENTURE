@@ -1026,6 +1026,7 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   margin: 0 auto !important;
 }
 
+/* FIX: Menggabungkan duplikasi deklarasi & mengunci perataan tengah */
 .gath-title-wrapper {
   text-align: center !important;
   width: 100% !important;
@@ -1033,34 +1034,43 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
+  justify-content: center !important;
 }
 
+/* FIX BADGE BIRU: Sempurna di tengah & lebar membungkus teks saja */
 .gath-title-badge {
-  font-size: 0.75rem !important;
+  font-size: 1.2rem !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 2.5px !important;
   color: #041e42 !important;
   background-color: rgba(4, 30, 66, 0.05) !important;
-  padding: 0.5rem 1rem !important;
+  padding: 0.6rem 1.2rem !important;
   border-radius: 30px !important;
   margin-bottom: 1rem !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 0.5rem !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
+  width: max-content !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
+/* FIX ICON OVERSIZE: Ukuran ikon disamakan agar tidak merusak space tinggi badge */
 .gath-title-badge i {
   color: #facc15 !important;
-  font-size: 0.8rem !important;
+  font-size: 1.3rem !important; /* Diturunkan dari 2rem agar sejajar dengan tinggi font tulisan */
+  line-height: 1 !important;
 }
 
 .gath-title-wrapper h2 {
-  font-size: 2.5rem !important;
+  font-size: 3rem !important; /* Ukuran font laptop/desktop utama tetap nyaman dibaca */
   font-weight: 600 !important;
   color: #041e42 !important;
   margin: 0 0 1.2rem 0 !important;
   letter-spacing: -0.5px !important;
+  line-height: 1.2 !important;
 }
 
 .gath-title-line {
@@ -1070,27 +1080,23 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   border-radius: 10px !important;
 }
 
-/* --- GRID SYSTEM: INDEPENDENT HEIGHT --- */
+/* ==========================================================================
+   GRID SYSTEM: AUTO ADJUST & FLUID CENTERED
+   ========================================================================== */
 .gath-box-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  /* auto-fit otomatis membagi kolom, minmax menjaga kartu minimal 320px agar proporsional */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
   gap: 2rem !important;
   width: 100% !important;
   align-items: stretch !important; /* Mencegah kolom lain ikut melar ke bawah */
+  justify-content: center !important; /* KUNCI UTAMA: Menjaga barisan baru/sisa kotak selalu di tengah */
   box-sizing: border-box !important;
 }
 
-/* KUNCI UTAMA 1: Mengubah align-items ke stretch agar kartu di sebelahnya tidak melar ke bawah */
-.gath-box-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 2rem !important;
-  width: 100% !important;
-  align-items: stretch !important;
-  box-sizing: border-box !important;
-}
-
-/* KUNCI UTAMA 2: Menambahkan height: max-content agar tinggi kartu mengikuti konten aslinya secara independen */
+/* ==========================================================================
+   CARD BASE STRUCTURE
+   ========================================================================== */
 .gath-box-card {
   background: #ffffff !important;
   border-radius: 20px !important;
@@ -1103,7 +1109,7 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   display: flex !important;
   flex-direction: column !important;
   width: 100% !important;
-  height: max-content !important;
+  height: max-content !important; /* Menjaga tinggi mengikuti konten aslinya secara independen */
 }
 
 .gath-box-card:hover {
@@ -1111,7 +1117,7 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   box-shadow: 0 20px 40px rgba(10, 25, 47, 0.08) !important;
 }
 
-/* Bingkai Foto */
+/* Image Wrapper & Badges */
 .gath-box-card .gath-box-image-wrapper {
   position: relative !important;
   width: 100% !important;
@@ -1122,7 +1128,6 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   display: block !important;
 }
 
-/* Foto Portrait Auto-Crop Cover */
 .gath-box-card .gath-box-image-wrapper .gath-box-img-fluid {
   width: 100% !important;
   height: 100% !important;
@@ -1138,7 +1143,6 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   transition: transform 0.4s ease !important;
 }
 
-/* Badge di Atas Gambar */
 .gath-box-badge {
   position: absolute !important;
   top: 1.25rem !important;
@@ -1148,14 +1152,14 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   color: #ffffff !important;
   padding: 0.5rem 1rem !important;
   border-radius: 30px !important;
-  font-size: 0.75rem !important;
+  font-size: 1.2rem !important;
   font-weight: 600 !important;
   letter-spacing: 0.5px !important;
   font-family: "Plus Jakarta Sans", sans-serif !important;
   z-index: 2 !important;
 }
 
-/* Area Konten Teks */
+/* Card Content Area */
 .gath-box-card-content {
   padding: 2rem !important;
   flex-grow: 1 !important;
@@ -1164,44 +1168,69 @@ header .navbar .dropdown:hover .dropdown-toggle i {
 }
 
 .gath-box-card-content h3 {
-  font-size: 1.4rem !important;
+  font-size: 2rem !important;
   color: #041e42 !important;
   margin: 0 0 0.5rem 0 !important;
 }
 
 .gath-box-card-content .gath-box-intro-text {
   color: #64748b !important;
-  font-size: 0.9rem !important;
+  font-size: 1.2rem !important;
   line-height: 1.5 !important;
   margin-bottom: 1.5rem !important;
 }
 
-/* Dropdown Trigger */
-.gath-box-details-trigger {
-  background: none !important;
-  border: none !important;
-  color: #041e42 !important;
-  font-size: 0.85rem !important;
-  font-weight: 600 !important;
-  display: flex !important;
+/* ==========================================================================
+   NEW MODERN DETAILS BUTTON STYLE
+   ========================================================================== */
+.gath-box-details-btn {
+  width: 100% !important;
+  display: inline-flex !important;
   align-items: center !important;
-  gap: 0.5rem !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
+  background-color: rgba(4, 30, 66, 0.04) !important;
+  color: #041e42 !important;
+  border: 1px solid rgba(4, 30, 66, 0.1) !important;
+  padding: 0.8rem 1rem !important;
+  border-radius: 12px !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
   cursor: pointer !important;
-  padding: 0.5rem 0 !important;
-  width: fit-content !important;
+  transition: all 0.3s ease !important;
   margin-bottom: 1rem !important;
+  box-sizing: border-box !important;
 }
 
-.gath-box-details-trigger i {
+.gath-box-details-btn:hover {
+  background-color: rgba(4, 30, 66, 0.08) !important;
+  border-color: rgba(4, 30, 66, 0.2) !important;
+}
+
+.gath-box-details-btn i {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
   font-size: 0.8rem !important;
 }
 
-/* Animasi Buka Tutup Halus */
+/* Active State Button */
+.gath-box-card.active .gath-box-details-btn {
+  background-color: #041e42 !important;
+  color: #ffffff !important;
+  border-color: #041e42 !important;
+}
+
+.gath-box-card.active .gath-box-details-btn i {
+  transform: rotate(180deg) !important;
+}
+
+/* ==========================================================================
+   DROPDOWN & ACCORDION ANIMATION
+   ========================================================================== */
 .gath-box-details-content {
   display: grid !important;
   grid-template-rows: 0fr !important;
-  transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important; /* Kurva akselerasi smooth premium */
+  transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important; /* Efek transisi smooth premium */
   width: 100% !important;
 }
 
@@ -1210,11 +1239,7 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   margin-bottom: 1.5rem !important;
 }
 
-.gath-box-card.active .gath-box-details-trigger i {
-  transform: rotate(180deg) !important;
-}
-
-/* List Rincian Fasilitas */
+/* Features List Content */
 .gath-box-features-list {
   min-height: 0 !important;
   overflow: hidden !important;
@@ -1226,7 +1251,7 @@ header .navbar .dropdown:hover .dropdown-toggle i {
 
 .gath-box-features-list li {
   font-family: "Plus Jakarta Sans", sans-serif !important;
-  font-size: 0.85rem !important;
+  font-size: 1.2rem !important;
   color: #1e293b !important;
   margin-bottom: 0.75rem !important;
   display: flex !important;
@@ -1239,17 +1264,18 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   flex-shrink: 0 !important;
   margin-top: 3px !important;
   color: #041e42 !important;
-  font-size: 0.85rem !important;
+  font-size: 1rem !important;
 }
 
-/* Area Dudukan Tombol WA */
+/* ==========================================================================
+   CALL TO ACTION WA BUTTON
+   ========================================================================== */
 .gath-box-card-actions {
   margin-top: auto !important;
   padding-top: 1rem !important;
   width: 100% !important;
 }
 
-/* Tombol WA Solid */
 .gath-box-btn-wa {
   display: inline-flex !important;
   align-items: center !important;
@@ -1261,7 +1287,7 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   text-decoration: none !important;
   padding: 1rem 0.5rem !important;
   border-radius: 12px !important;
-  font-size: 0.9rem !important;
+  font-size: 1.3rem !important;
   font-weight: 600 !important;
   transition: all 0.3s ease !important;
   box-sizing: border-box !important;
@@ -1273,7 +1299,30 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   transform: translateY(-2px) !important;
 }
 
-/* Variasi Kartu Featured (Kuning) */
+/* ==========================================================================
+   FEATURED VARIANT (YELLOW THEME)
+   ========================================================================== */
+.gath-box-card.gath-box-featured .gath-box-badge {
+  background: #facc15 !important;
+  color: #041e42 !important;
+}
+
+.gath-box-card.gath-box-featured .gath-box-details-btn {
+  background-color: rgba(250, 204, 21, 0.1) !important;
+  color: #a18105 !important;
+  border: 1px solid rgba(250, 204, 21, 0.3) !important;
+}
+
+.gath-box-card.gath-box-featured .gath-box-details-btn:hover {
+  background-color: rgba(250, 204, 21, 0.18) !important;
+}
+
+.gath-box-card.gath-box-featured.active .gath-box-details-btn {
+  background-color: #facc15 !important;
+  color: #041e42 !important;
+  border-color: #facc15 !important;
+}
+
 .gath-box-card.gath-box-featured .gath-box-btn-wa {
   background-color: #facc15 !important;
   color: #041e42 !important;
@@ -1283,27 +1332,115 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   background-color: #e2b60d !important;
 }
 
-.gath-box-card.gath-box-featured .gath-box-badge {
-  background: #facc15 !important;
-  color: #041e42 !important;
-}
+/* ==========================================================================
+   COMPREHENSIVE RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
 
-/* Responsive Grid */
-@media (max-width: 1024px) {
+/* Laptop Standard / Tablet Landscape (Max-width: 991px) */
+@media (max-width: 991px) {
+  .gath-box-section {
+    padding: 3.5rem 1.5rem !important;
+  }
+
+  .gath-title-wrapper {
+    margin-bottom: 2.5rem !important;
+    text-align: center !important; /* Memastikan teks pembungkus di tengah */
+  }
+
+  .gath-title-wrapper h2 {
+    font-size: 2.4rem !important; /* Ditingkatkan dari 2.2rem */
+  }
+
   .gath-box-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)) !important;
     gap: 1.5rem !important;
-    align-items: stretch !important;
+  }
+  .gath-box-card-content {
+    padding: 1.5rem !important;
   }
 }
 
+/* Tablet Portrait (Max-width: 768px) */
 @media (max-width: 768px) {
   .gath-box-section {
-    padding: 2rem 1rem !important;
+    padding: 3rem 1.25rem !important; /* Longgar sedikit agar seimbang dengan teks yang membesar */
   }
+
+  .gath-title-wrapper {
+    text-align: center !important;
+  }
+
+  .gath-title-wrapper h2 {
+    font-size: 2.1rem !important; /* Ditingkatkan dari 1.8rem agar lebih bold dan terbaca */
+  }
+
   .gath-box-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.2rem !important; /* Gap sedikit dilonggarkan */
+  }
+
+  .gath-box-card .gath-box-image-wrapper {
+    height: 160px !important; /* Ditambah tinggi gambarnya agar seimbang dengan teks baru */
+  }
+
+  .gath-box-card-content {
+    padding: 1.2rem !important; /* Area dalam kotak lebih lega */
+  }
+
+  .gath-box-card-content h3 {
+    font-size: 1.3rem !important; /* Ditingkatkan dari 1.1rem agar tulisan judul produk jelas */
+  }
+}
+
+/* Smartphone Layar Kecil (Max-width: 450px) */
+@media (max-width: 450px) {
+  .gath-box-section {
+    padding: 2.5rem 1rem !important; /* Area luar sedikit ditambah agar teks pinggir tidak sesak */
+  }
+
+  .gath-title-wrapper {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Memaksa semua elemen title tegak lurus di tengah */
+  }
+
+  /* FIX BADGE BIRU: Pas di tengah, tidak melar, space proporsional */
+  .gath-title-badge {
+    display: inline-block !important;
+    width: auto !important; /* Mencegah badge melebar penuh */
+    margin: 0 auto 0.75rem auto !important; /* Otomatis tengah dan memberi jarak ke bawah */
+    font-size: 0.85rem !important; /* Ukuran font badge dinaikkan dari 0.7rem */
+    padding: 0.5rem 1rem !important; /* Padding disesuaikan agar pas membungkus tulisan */
+    letter-spacing: 1px !important;
+  }
+
+  .gath-title-wrapper h2 {
+    font-size: 1.65rem !important; /* Ditingkatkan dari 1.4rem agar teks headline kokoh */
+    line-height: 1.3 !important;
+  }
+
+  .gath-box-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.85rem !important; /* Gap dinaikkan agar antar kotak tidak terlalu berdempetan */
+  }
+
+  .gath-box-card .gath-box-image-wrapper {
+    height: 135px !important; /* Proporsi gambar dinaikkan sedikit */
+    min-height: 135px !important;
+  }
+
+  .gath-box-card-content {
+    padding: 1rem !important; /* Padding dalam kotak dinaikkan dari 0.85rem */
+  }
+
+  .gath-box-card-content h3 {
+    font-size: 1.15rem !important; /* Judul produk di dalam grid HP dinaikkan dari 1rem */
+  }
+
+  .gath-box-btn-wa {
+    padding: 0.75rem 0.6rem !important; /* Tombol dibuat lebih tebal agar mudah di-klik jari */
+    font-size: 0.85rem !important; /* Teks tombol dinaikkan dari 0.75rem */
   }
 }
 
