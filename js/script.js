@@ -50,10 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // why choose us section end
 
 const images = [
-  "./paket/rafting1.JPG",
-  "./paket/rafting2.JPG",
-  "./paket/rafting3.jpg",
-  "./paket/rafting6.jpg",
+  "paket/rafting1.JPG",
+  "paket/rafting2.JPG",
+  "paket/rafting3.jpg",
+  "paket/rafting6.jpg",
 ];
 
 let currentIndex = 0;

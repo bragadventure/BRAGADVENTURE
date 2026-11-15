@@ -1445,6 +1445,7 @@ header .navbar .dropdown:hover .dropdown-toggle i {
     line-height: 1.4 !important;
     margin-bottom: 10px !important;
     display: -webkit-box;
+    line-clamp: 3;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -1478,117 +1479,119 @@ header .navbar .dropdown:hover .dropdown-toggle i {
     text-align: center;
     justify-content: center;
   }
-}
-/* opsi paket end */
-/* ==========================================
+  /* opsi paket end */
+  /* ==========================================
    GATH MODULE END
    ========================================== */
 
-/* dokumentasi start */
-/* ==========================================================================
+  /* dokumentasi start */
+  /* ==========================================================================
    DOCUMENTATION CAROUSEL TRAIN SECTION (MARQUEE)
    ========================================================================== */
-.documentation {
-  padding: 4rem 0;
-  background-color: #ffffff;
-  overflow: hidden; /* Mengunci agar luapan kereta foto tidak merusak lebar layar */
-}
-
-.doc-title-box {
-  padding: 0 7%;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.doc-tagline {
-  color: #021f3a;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 2px;
-  border-bottom: 3px solid #ffd905;
-  padding-bottom: 0.3rem;
-}
-
-.doc-title {
-  font-size: 2.8rem;
-  color: #021f3a;
-  margin-top: 1rem;
-}
-
-/* Container Utama Kereta */
-.marquee-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-}
-
-/* Jalur Rel Kereta Foto */
-.marquee-track {
-  display: flex;
-  gap: 1.5rem;
-  width: max-content;
-  /* Memanggil animasi jalan konstan (25 detik bisa disesuaikan) */
-  animation: trainLoop 25s linear infinite;
-}
-
-/* Efek Berhenti Berjalan Saat Kursor Mouse Diarahkan Ke Foto */
-.marquee-container:hover .marquee-track {
-  animation-play-state: paused;
-}
-
-/* Kotak Frame Foto Satuan */
-.marquee-item {
-  width: 300px;
-  height: 200px;
-  border-radius: 1.2rem;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(2, 31, 58, 0.06);
-  flex-shrink: 0; /* Mencegah foto menciut gepeng */
-}
-
-.marquee-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-/* Efek Zoom Tipis Saat Foto Ditunjuk */
-.marquee-item:hover img {
-  transform: scale(1.06);
-}
-
-/* KEYFRAMES JALAN AUTOMATIS (Wajib geser -50% dari total panjang kloning) */
-@keyframes trainLoop {
-  0% {
-    transform: translateX(0);
+  .documentation {
+    padding: 4rem 0;
+    background-color: #ffffff;
+    overflow: hidden; /* Mengunci agar luapan kereta foto tidak merusak lebar layar */
   }
-  100% {
-    transform: translateX(calc(-50% - 0.75rem)); /* Menghitung kompensasi gap */
-  }
-}
 
-/* --- RESPONSIF KHUSUS HP (450px) --- */
-@media (max-width: 450px) {
+  .doc-title-box {
+    padding: 0 7%;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .doc-tagline {
+    color: #021f3a;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #ffd905;
+    padding-bottom: 0.3rem;
+  }
+
   .doc-title {
-    font-size: 2rem;
+    font-size: 2.8rem;
+    color: #021f3a;
+    margin-top: 1rem;
   }
-  .marquee-item {
-    width: 220px; /* Ukuran frame foto disesuaikan lebih kecil di HP */
-    height: 150px;
-    border-radius: 0.8rem;
+
+  /* Container Utama Kereta */
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
   }
+
+  /* Jalur Rel Kereta Foto */
   .marquee-track {
-    gap: 1rem;
-    animation-duration: 18s; /* Lebih cepat di HP agar tidak bosan menunggu */
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    /* Memanggil animasi jalan konstan (25 detik bisa disesuaikan) */
+    animation: trainLoop 25s linear infinite;
   }
+
+  /* Efek Berhenti Berjalan Saat Kursor Mouse Diarahkan Ke Foto */
+  .marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* Kotak Frame Foto Satuan */
+  .marquee-item {
+    width: 300px;
+    height: 200px;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(2, 31, 58, 0.06);
+    flex-shrink: 0; /* Mencegah foto menciut gepeng */
+  }
+
+  .marquee-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  /* Efek Zoom Tipis Saat Foto Ditunjuk */
+  .marquee-item:hover img {
+    transform: scale(1.06);
+  }
+
+  /* KEYFRAMES JALAN AUTOMATIS (Wajib geser -50% dari total panjang kloning) */
   @keyframes trainLoop {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-50% - 0.5rem));
+      transform: translateX(
+        calc(-50% - 0.75rem)
+      ); /* Menghitung kompensasi gap */
+    }
+  }
+
+  /* --- RESPONSIF KHUSUS HP (450px) --- */
+  @media (max-width: 450px) {
+    .doc-title {
+      font-size: 2rem;
+    }
+    .marquee-item {
+      width: 220px; /* Ukuran frame foto disesuaikan lebih kecil di HP */
+      height: 150px;
+      border-radius: 0.8rem;
+    }
+    .marquee-track {
+      gap: 1rem;
+      animation-duration: 18s; /* Lebih cepat di HP agar tidak bosan menunggu */
+    }
+    @keyframes trainLoop {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-50% - 0.5rem));
+      }
     }
   }
 }
