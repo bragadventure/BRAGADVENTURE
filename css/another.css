@@ -1392,58 +1392,94 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   }
 }
 
-/* Smartphone Layar Kecil (Max-width: 450px) */
 @media (max-width: 450px) {
   .gath-box-section {
-    padding: 2.5rem 1rem !important; /* Area luar sedikit ditambah agar teks pinggir tidak sesak */
+    padding: 40px 12px !important;
   }
 
-  .gath-title-wrapper {
-    text-align: center !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important; /* Memaksa semua elemen title tegak lurus di tengah */
-  }
-
-  /* FIX BADGE BIRU: Pas di tengah, tidak melar, space proporsional */
-  .gath-title-badge {
-    display: inline-block !important;
-    width: auto !important; /* Mencegah badge melebar penuh */
-    margin: 0 auto 0.75rem auto !important; /* Otomatis tengah dan memberi jarak ke bawah */
-    font-size: 0.85rem !important; /* Ukuran font badge dinaikkan dari 0.7rem */
-    padding: 0.5rem 1rem !important; /* Padding disesuaikan agar pas membungkus tulisan */
-    letter-spacing: 1px !important;
-  }
-
-  .gath-title-wrapper h2 {
-    font-size: 1.65rem !important; /* Ditingkatkan dari 1.4rem agar teks headline kokoh */
-    line-height: 1.3 !important;
-  }
-
+  /* Tetap 2 kolom dalam 1 baris dengan jarak rapat */
   .gath-box-grid {
+    display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.85rem !important; /* Gap dinaikkan agar antar kotak tidak terlalu berdempetan */
+    gap: 10px !important;
+    align-items: stretch;
   }
 
-  .gath-box-card .gath-box-image-wrapper {
-    height: 135px !important; /* Proporsi gambar dinaikkan sedikit */
-    min-height: 135px !important;
+  .gath-box-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px !important;
+    overflow: hidden;
   }
 
+  /* Gambar dibuat pendek agar kartu tidak memanjang ke bawah */
+  .gath-box-image-wrapper {
+    height: 110px !important;
+    min-height: 110px !important;
+  }
+
+  .gath-box-badge {
+    font-size: 9px !important;
+    padding: 3px 7px !important;
+    top: 8px !important;
+    left: 8px !important;
+  }
+
+  /* Konten dibuat padat dan rapi */
   .gath-box-card-content {
-    padding: 1rem !important; /* Padding dalam kotak dinaikkan dari 0.85rem */
+    padding: 12px 10px !important;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   .gath-box-card-content h3 {
-    font-size: 1.15rem !important; /* Judul produk di dalam grid HP dinaikkan dari 1rem */
+    font-size: 14px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Batasi teks deskripsi maksimal 3 baris agar tinggi kartu seragam & tidak panjang */
+  .gath-box-intro-text {
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 10px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Rincian paket di dalam kartu sempit dibuat lebih ringkas */
+  .gath-box-features-list li {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 5px !important;
+  }
+
+  /* Tombol dibuat kompak & pas untuk 2 kolom */
+  .gath-box-details-btn {
+    padding: 7px 8px !important;
+    font-size: 11px !important;
+    margin-top: auto !important;
+    margin-bottom: 6px !important;
+    border-radius: 8px !important;
+  }
+
+  .gath-box-card-actions {
+    margin-top: 0 !important;
   }
 
   .gath-box-btn-wa {
-    padding: 0.75rem 0.6rem !important; /* Tombol dibuat lebih tebal agar mudah di-klik jari */
-    font-size: 0.85rem !important; /* Teks tombol dinaikkan dari 0.75rem */
+    padding: 8px 8px !important;
+    font-size: 11px !important;
+    border-radius: 8px !important;
+    gap: 4px !important;
+    text-align: center;
+    justify-content: center;
   }
 }
-
+/* opsi paket end */
 /* ==========================================
    GATH MODULE END
    ========================================== */
