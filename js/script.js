@@ -50,10 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // why choose us section end
 
 const images = [
-  "paket/rafting.jpg",
-  "paket/rafting2.JPG",
-  "paket/rafting3.jpg",
-  "paket/rafting6.jpg",
+  "../paket/rafting1.JPG",
+  "../paket/rafting2.JPG",
+  "../paket/rafting3.jpg",
+  "../paket/rafting6.jpg",
 ];
 
 let currentIndex = 0;
@@ -136,3 +136,28 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // opsi paket end
+
+// about section start
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tabButtons = document.querySelectorAll(".ob-tab-btn");
+  const tabPanels = document.querySelectorAll(".ob-tab-panel");
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Hapus status active di semua tombol dan panel
+      tabButtons.forEach((b) => b.classList.remove("active"));
+      tabPanels.forEach((p) => p.classList.remove("active"));
+
+      // Aktifkan tombol yang diklik dan panel tujuannya
+      btn.classList.add("active");
+      const targetId = btn.getAttribute("data-target");
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add("active");
+      }
+    });
+  });
+});
+
+// about section end
