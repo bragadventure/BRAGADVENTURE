@@ -48,18 +48,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // why choose us section end
-
 const images = [
-  "./paket/rafting1.JPG",
-  "./paket/rafting2.JPG",
-  "./paket/rafting3.jpg",
-  "./paket/rafting6.jpg",
+  "paket/rafting1.JPG",
+  "paket/rafting2.JPG",
+  "paket/rafting3.jpg",
+  "paket/rafting6.jpg",
 ];
 
 let currentIndex = 0;
 const heroSection = document.querySelector(".hero");
 
-// Fungsi untuk memastikan gambar di-load dulu sebelum dipasang biar tidak ada white flash
 function preloadImages() {
   images.forEach((src) => {
     const img = new Image();
@@ -68,7 +66,6 @@ function preloadImages() {
 }
 preloadImages();
 
-// Inisialisasi pasang gambar pertama saat halaman dimuat
 if (heroSection) {
   heroSection.style.setProperty("--bg-image", `url("${images[currentIndex]}")`);
 }
@@ -76,10 +73,8 @@ if (heroSection) {
 function changeBackground() {
   if (!heroSection) return;
 
-  // 1. Tambahkan class untuk memicu animasi blur, peredupan, dan zoom di CSS
   heroSection.classList.add("bg-fade");
 
-  // 2. Ganti url gambar tepat di milidetik ke-200 (titik tergelap versi CSS)
   setTimeout(() => {
     currentIndex = (currentIndex + 1) % images.length;
     heroSection.style.setProperty(
@@ -88,31 +83,47 @@ function changeBackground() {
     );
   }, 200);
 
-  // 3. Lepas class setelah 400ms agar siklus animasi siap dijalankan kembali
   setTimeout(() => {
     heroSection.classList.remove("bg-fade");
   }, 400);
 }
 
-// Menjalankan rotasi background secara otomatis setiap 4 detik
 setInterval(changeBackground, 4000);
 
 // wa section start
 window.addEventListener("DOMContentLoaded", () => {
   const bubble = document.getElementById("waBubble");
 
-  // PROTEKSI: Jalankan fungsi HANYA jika elemen waBubble ditemukan di halaman tersebut
   if (bubble) {
     setTimeout(() => {
       bubble.classList.add("show");
     }, 2000);
   }
+});
 
-  const features = document.querySelectorAll(".fade-on-scroll");
-  if (features.length > 0) {
-    // Jalankan logika animasi scroll lu di sini...
+// about section tab switcher
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".ob-tab-btn");
+  if (!btn) return;
+
+  const board = btn.closest(".ob-interactive-board");
+  if (!board) return;
+
+  board
+    .querySelectorAll(".ob-tab-btn")
+    .forEach((b) => b.classList.remove("active"));
+  board
+    .querySelectorAll(".ob-tab-panel")
+    .forEach((p) => p.classList.remove("active"));
+
+  btn.classList.add("active");
+  const targetId = btn.getAttribute("data-target");
+  const targetPanel = document.getElementById(targetId);
+  if (targetPanel) {
+    targetPanel.classList.add("active");
   }
 });
+
 // wa section end
 
 // opsi paket start
