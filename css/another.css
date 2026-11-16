@@ -1484,118 +1484,122 @@ header .navbar .dropdown:hover .dropdown-toggle i {
    GATH MODULE END
    ========================================== */
 
-  /* dokumentasi start */
-  /* ==========================================================================
+  /* Penutup pengaman jika blok di atasnya belum tertutup */
+}
+
+/* dokumentasi start */
+/* ==========================================================================
    DOCUMENTATION CAROUSEL TRAIN SECTION (MARQUEE)
    ========================================================================== */
-  .documentation {
-    padding: 4rem 0;
-    background-color: #ffffff;
-    overflow: hidden; /* Mengunci agar luapan kereta foto tidak merusak lebar layar */
-  }
+.documentation {
+  padding: 4rem 0;
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 100%;
+}
 
-  .doc-title-box {
-    padding: 0 7%;
-    margin-bottom: 3rem;
-    text-align: center;
-  }
+.doc-title-box {
+  padding: 0 7%;
+  margin-bottom: 3rem;
+  text-align: center;
+}
 
-  .doc-tagline {
-    color: #021f3a;
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    border-bottom: 3px solid #ffd905;
-    padding-bottom: 0.3rem;
-  }
+.doc-tagline {
+  display: inline-block;
+  color: #021f3a;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  border-bottom: 3px solid #ffd905;
+  padding-bottom: 0.3rem;
+}
 
-  .doc-title {
-    font-size: 2.8rem;
-    color: #021f3a;
-    margin-top: 1rem;
-  }
+.doc-title {
+  font-size: 2.8rem;
+  color: #021f3a;
+  margin-top: 1rem;
+}
 
-  /* Container Utama Kereta */
-  .marquee-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-  }
+/* Container Utama Kereta */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
 
-  /* Jalur Rel Kereta Foto */
-  .marquee-track {
-    display: flex;
-    gap: 1.5rem;
-    width: max-content;
-    /* Memanggil animasi jalan konstan (25 detik bisa disesuaikan) */
-    animation: trainLoop 25s linear infinite;
-  }
+/* Jalur Rel Kereta Foto */
+.marquee-track {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: max-content;
+  animation: trainLoop 25s linear infinite;
+}
 
-  /* Efek Berhenti Berjalan Saat Kursor Mouse Diarahkan Ke Foto */
-  .marquee-container:hover .marquee-track {
-    animation-play-state: paused;
-  }
+/* Efek Berhenti Berjalan Saat Kursor Mouse Diarahkan Ke Foto */
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
 
-  /* Kotak Frame Foto Satuan */
-  .marquee-item {
-    width: 300px;
-    height: 200px;
-    border-radius: 1.2rem;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(2, 31, 58, 0.06);
-    flex-shrink: 0; /* Mencegah foto menciut gepeng */
-  }
+/* Kotak Frame Foto Satuan */
+.marquee-item {
+  width: 300px;
+  height: 200px;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(2, 31, 58, 0.06);
+  flex-shrink: 0;
+}
 
-  .marquee-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-  }
+.marquee-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
 
-  /* Efek Zoom Tipis Saat Foto Ditunjuk */
-  .marquee-item:hover img {
-    transform: scale(1.06);
-  }
+/* Efek Zoom Tipis Saat Foto Ditunjuk */
+.marquee-item:hover img {
+  transform: scale(1.06);
+}
 
-  /* KEYFRAMES JALAN AUTOMATIS (Wajib geser -50% dari total panjang kloning) */
-  @keyframes trainLoop {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(
-        calc(-50% - 0.75rem)
-      ); /* Menghitung kompensasi gap */
-    }
+/* KEYFRAMES JALAN AUTOMATIS DESKTOP */
+@keyframes trainLoop {
+  0% {
+    transform: translateX(0);
   }
-
-  /* --- RESPONSIF KHUSUS HP (450px) --- */
-  @media (max-width: 450px) {
-    .doc-title {
-      font-size: 2rem;
-    }
-    .marquee-item {
-      width: 220px; /* Ukuran frame foto disesuaikan lebih kecil di HP */
-      height: 150px;
-      border-radius: 0.8rem;
-    }
-    .marquee-track {
-      gap: 1rem;
-      animation-duration: 18s; /* Lebih cepat di HP agar tidak bosan menunggu */
-    }
-    @keyframes trainLoop {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(calc(-50% - 0.5rem));
-      }
-    }
+  100% {
+    transform: translateX(calc(-50% - 0.75rem));
   }
 }
 
+/* --- RESPONSIF KHUSUS HP (450px) --- */
+@media (max-width: 450px) {
+  .doc-title {
+    font-size: 2rem;
+  }
+  .marquee-item {
+    width: 220px;
+    height: 150px;
+    border-radius: 0.8rem;
+  }
+  .marquee-track {
+    gap: 1rem;
+    animation: trainLoopMobile 18s linear infinite;
+  }
+}
+
+/* KEYFRAMES JALAN AUTOMATIS HP */
+@keyframes trainLoopMobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
 /* dokumentasi end */
 
 /* =========================================
@@ -2469,10 +2473,9 @@ body {
 
 /* wa button end */
 
-/* footer start */
-/* --- FOOTER MAIN STYLES --- */
+/* footer start */ /* --- FOOTER MAIN STYLES --- */
 .footer {
-  background: #021f3a; /* Menyamakan dengan warna dasar tombol & tema EXOFUNTURE Anda */
+  background: #021f3a;
   padding: 5rem 7% 3rem 7%;
   position: relative;
   z-index: 5;
@@ -2481,18 +2484,17 @@ body {
 
 .footer-container {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1.2fr; /* Membagi space kiri, tengah, kanan */
+  grid-template-columns: 1.5fr 1fr 1.2fr;
   gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
   align-items: flex-start;
 }
-
 /* --- BRAND SECTION --- */
 .footer-brand .logo {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #fcd600; /* Warna kuning khas logo Anda */
+  color: #fcd600;
   text-decoration: none;
   display: block;
   margin-bottom: 1.5rem;
@@ -2505,7 +2507,34 @@ body {
   line-height: 1.6;
   max-width: 300px;
 }
+/* --- SOCIAL MEDIA LINKS --- */
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
 
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: #a0aec0;
+  font-size: 1.8rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-socials a:hover {
+  color: #021f3a;
+  background: #fcd600;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(252, 214, 0, 0.3);
+}
 /* --- LINKS SECTION --- */
 .footer-links h3 {
   font-size: 1.6rem;
@@ -2532,23 +2561,9 @@ body {
 }
 
 .footer-links ul li a:hover {
-  color: #fcd600; /* Berubah kuning saat diarahkan kursor */
+  color: #fcd600;
 }
-
 /* --- COPYRIGHT SECTION --- */
-.footer-copyright {
-  text-align: right;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-
-.footer-copyright p {
-  font-size: 1.3rem;
-  color: #718096;
-}
-
 .footer-cr {
   max-width: 1200px;
   margin: 4rem auto 0 auto;
@@ -2561,41 +2576,6 @@ body {
   font-size: 1.3rem;
   color: #718096;
 }
-
-/* --- BARIS CR DENGAN DISTRIBUSI KIRI-KANAN --- */
-.footer-cr {
-  max-width: 1200px;
-  margin: 4rem auto 0 auto;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 3rem;
-}
-
-.footer-cr-left p {
-  font-size: 1.3rem;
-  color: #718096;
-  margin-bottom: 0.8rem;
-}
-
-.footer-legal {
-  display: flex;
-  gap: 2rem;
-}
-
-.footer-legal a {
-  font-size: 1.3rem;
-  color: #718096;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-legal a:hover {
-  color: #fcd600;
-}
-
 /* --- GRID FOTO MELEBAR HORIZONTAL (POJOK KANAN) --- */
 .footer-photo-grid {
   display: grid;
@@ -2628,12 +2608,11 @@ body {
   height: 100%;
   object-fit: cover;
 }
-
-/* Formasi Baru: Segitiga Siku-Siku Melebar yang Abstrak & Acak */
+/* Formasi Grid Foto */
 .item-1 {
   grid-column: 4;
   grid-row: 1 / span 2;
-} /* Balok PANJANG vertikal di kanan */
+}
 .item-2 {
   grid-column: 4;
   grid-row: 3;
@@ -2641,7 +2620,7 @@ body {
 .item-3 {
   grid-column: 2 / span 2;
   grid-row: 1;
-} /* Balok LEBAR horizontal di atas */
+}
 .item-4 {
   grid-column: 3;
   grid-row: 2;
@@ -2653,109 +2632,67 @@ body {
 .item-6 {
   grid-column: 2;
   grid-row: 2 / span 2;
-} /* Balok PANJANG vertikal di tengah */
+}
 .item-7 {
   grid-column: 1;
   grid-row: 3;
-} /* Titik lancip di ujung kiri bawah */
-/* Titik lancip abstrak di paling kiri bawah */
-
+}
 /* --- RESPONSIVITAS MEDIA QUERIES --- */
-/* ==========================================================================
-   MEDIA QUERY LAYAR LAPTOP KECIL / TABLET (MAX-WIDTH: 991px)
-   ========================================================================== */
 @media (max-width: 991px) {
   .footer-container {
-    /* Tetap pertahankan kolom kanan khusus untuk foto */
     grid-template-columns: 1fr 0.8fr 1.5fr;
     gap: 2.5rem;
   }
-
-  /* Perkecil kotak foto sedikit agar pas dengan space kanan tablet */
   .footer-photo-grid {
     grid-template-columns: repeat(4, 60px);
     grid-template-rows: repeat(3, 60px);
     gap: 6px;
-    justify-content: flex-end; /* Tetap kunci di pojok kanan */
+    justify-content: flex-end;
   }
 }
-
-/* ==========================================================================
-   MEDIA QUERY LAYAR HP & TABLET KECIL (MAX-WIDTH: 768px)
-   ========================================================================== */
 @media (max-width: 768px) {
   .footer {
     padding: 5rem 5% 3rem 5%;
   }
-
   .footer-container {
-    /* Gabungkan Brand & Links di kiri, Foto tetap eksklusif di kanan */
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
   }
-
-  /* Memaksa Brand mengambil baris penuh di atas, Links di kiri bawah, Foto di kanan bawah */
   .footer-brand {
     grid-column: span 2;
     text-align: left;
   }
-
   .footer-links {
     grid-column: 1;
     text-align: left;
   }
-
   .footer-photo-grid {
     grid-column: 2;
-    grid-template-columns: repeat(4, 55px); /* Kotak 55px */
+    grid-template-columns: repeat(4, 55px);
     grid-template-rows: repeat(3, 55px);
     gap: 5px;
-    justify-content: flex-end; /* Tetap kunci di pojok kanan */
-    align-self: flex-end; /* Sejajar di bagian paling bawah */
+    justify-content: flex-end;
+    align-self: flex-end;
   }
 }
-
-/* ==========================================================================
-   MEDIA QUERY RESPONSIVE LAYAR HP KECIL (MAX-WIDTH: 450px)
-   ========================================================================== */
 @media (max-width: 450px) {
   .footer-container {
-    /* Memaksa layout tetap dibagi 2 kolom: Kiri untuk links, Kanan untuk foto */
-    grid-template-columns: 1fr 0.8fr;
-    gap: 1rem;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2rem;
   }
-
   .footer-brand {
-    grid-column: span 2; /* Brand tetep penuh di atas */
+    grid-column: span 2;
     text-align: left;
   }
-
   .footer-links {
-    grid-column: 1; /* Links di kiri bawah */
+    grid-column: 1;
     text-align: left;
   }
-
   .footer-links h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
   }
-
   .footer-links ul li {
     margin-bottom: 0.8rem;
   }
-
-  /* KUNCI FOTO TETEP SEJAJAR DI POJOK KANAN */
-  .footer-photo-grid {
-    grid-column: 2; /* Foto sejajar di kanan bawah */
-    grid-template-columns: repeat(
-      4,
-      42px
-    ); /* Kotak digiring ke 42px agar muat sejajar */
-    grid-template-rows: repeat(3, 42px);
-    gap: 4px;
-    justify-content: flex-end;
-    align-self: flex-end; /* Memastikan sejajar rapi di paling bawah */
-  }
 }
-
-/* footer end */
