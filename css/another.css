@@ -1266,10 +1266,55 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   color: #041e42 !important;
   font-size: 1rem !important;
 }
+.gath-custom-note {
+  grid-column: 1 / -1 !important; /* <-- INI YANG BIKIN DIA MEMANJANG PENUH WALAU DI DALAM GRID */
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 2rem 0 0 0 !important;
+  padding: 1.4rem 2rem !important;
+  box-sizing: border-box !important;
+  background-color: #f8fafc !important;
+  border-left: 4px solid #facc15 !important;
+  border-radius: 10px !important;
+  gap: 1rem !important;
+  font-size: 1.35rem !important;
+  line-height: 1.5 !important;
+  color: #475569 !important;
+  text-transform: none !important;
+  text-align: left !important;
+}
+
+.gath-custom-note i {
+  color: #041e42 !important;
+  font-size: 1.6rem !important;
+  flex-shrink: 0 !important;
+}
+
+.gath-custom-note span {
+  flex: 1 !important;
+  max-width: none !important;
+}
+
+.gath-custom-note strong {
+  color: #041e42 !important;
+  font-weight: 700 !important;
+}
+
+.gath-custom-note a {
+  color: #041e42 !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+}
 
 /* ==========================================================================
    CALL TO ACTION WA BUTTON
    ========================================================================== */
+/* opsi section start di gathering */
 .gath-box-card-actions {
   margin-top: auto !important;
   padding-top: 1rem !important;
@@ -1332,155 +1377,352 @@ header .navbar .dropdown:hover .dropdown-toggle i {
   background-color: #e2b60d !important;
 }
 
-/* ==========================================================================
-   COMPREHENSIVE RESPONSIVE DESIGN (MEDIA QUERIES)
-   ========================================================================== */
-
-/* Laptop Standard / Tablet Landscape (Max-width: 991px) */
-@media (max-width: 991px) {
-  .gath-box-section {
-    padding: 3.5rem 1.5rem !important;
-  }
-
-  .gath-title-wrapper {
-    margin-bottom: 2.5rem !important;
-    text-align: center !important; /* Memastikan teks pembungkus di tengah */
-  }
-
-  .gath-title-wrapper h2 {
-    font-size: 2.4rem !important; /* Ditingkatkan dari 2.2rem */
-  }
-
-  .gath-box-grid {
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)) !important;
-    gap: 1.5rem !important;
-  }
-  .gath-box-card-content {
-    padding: 1.5rem !important;
-  }
+.gath-custom-note {
+  grid-column: 1 / -1 !important;
+  margin-top: 1.8rem !important;
+  padding: 1.2rem 1.6rem !important;
+  font-size: 1.3rem !important;
 }
 
 /* Tablet Portrait (Max-width: 768px) */
 @media (max-width: 768px) {
+  /* --- Opsi Paket Slider (768px) --- */
   .gath-box-section {
-    padding: 3rem 1.25rem !important; /* Longgar sedikit agar seimbang dengan teks yang membesar */
+    padding: 3.5rem 0 !important;
+    overflow: hidden !important;
+  }
+
+  .gath-box-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .gath-title-wrapper {
+    padding: 0 2rem !important;
+    margin-bottom: 2.4rem !important;
     text-align: center !important;
   }
 
   .gath-title-wrapper h2 {
-    font-size: 2.1rem !important; /* Ditingkatkan dari 1.8rem agar lebih bold dan terbaca */
+    font-size: 2.4rem !important;
+    font-weight: 700 !important;
   }
 
   .gath-box-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1.2rem !important; /* Gap sedikit dilonggarkan */
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-padding-left: 2rem !important;
+    gap: 1.6rem !important;
+    padding: 0.6rem 2rem 2rem 2rem !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
   }
 
-  .gath-box-card .gath-box-image-wrapper {
-    height: 160px !important; /* Ditambah tinggi gambarnya agar seimbang dengan teks baru */
-  }
-
-  .gath-box-card-content {
-    padding: 1.2rem !important; /* Area dalam kotak lebih lega */
-  }
-
-  .gath-box-card-content h3 {
-    font-size: 1.3rem !important; /* Ditingkatkan dari 1.1rem agar tulisan judul produk jelas */
-  }
-}
-
-@media (max-width: 450px) {
-  .gath-box-section {
-    padding: 40px 12px !important;
-  }
-
-  /* Tetap 2 kolom dalam 1 baris dengan jarak rapat */
-  .gath-box-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    align-items: stretch;
+  .gath-box-grid::-webkit-scrollbar {
+    display: none !important;
   }
 
   .gath-box-card {
-    display: flex;
-    flex-direction: column;
-    border-radius: 14px !important;
-    overflow: hidden;
+    flex: 0 0 46% !important;
+    max-width: 46% !important;
+    scroll-snap-align: start !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
   }
 
-  /* Gambar dibuat pendek agar kartu tidak memanjang ke bawah */
-  .gath-box-image-wrapper {
-    height: 110px !important;
-    min-height: 110px !important;
+  .gath-box-card .gath-box-image-wrapper {
+    height: 165px !important;
+    min-height: 165px !important;
   }
 
   .gath-box-badge {
-    font-size: 9px !important;
-    padding: 3px 7px !important;
-    top: 8px !important;
-    left: 8px !important;
+    font-size: 1.15rem !important;
+    font-weight: 600 !important;
+    padding: 0.45rem 1rem !important;
   }
 
-  /* Konten dibuat padat dan rapi */
   .gath-box-card-content {
-    padding: 12px 10px !important;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    padding: 1.6rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
   }
 
   .gath-box-card-content h3 {
-    font-size: 14px !important;
-    line-height: 1.25 !important;
-    margin-bottom: 6px !important;
+    font-size: 1.85rem !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.8rem !important;
   }
 
-  /* Batasi teks deskripsi maksimal 3 baris agar tinggi kartu seragam & tidak panjang */
   .gath-box-intro-text {
-    font-size: 11.5px !important;
-    line-height: 1.4 !important;
-    margin-bottom: 10px !important;
-    display: -webkit-box;
-    line-clamp: 3;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    font-size: 1.35rem !important;
+    font-weight: 400 !important;
+    line-height: 1.55 !important;
+    margin-bottom: 1.4rem !important;
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    overflow: visible !important;
   }
 
-  /* Rincian paket di dalam kartu sempit dibuat lebih ringkas */
-  .gath-box-features-list li {
-    font-size: 11px !important;
-    line-height: 1.35 !important;
-    margin-bottom: 5px !important;
-  }
-
-  /* Tombol dibuat kompak & pas untuk 2 kolom */
   .gath-box-details-btn {
-    padding: 7px 8px !important;
-    font-size: 11px !important;
+    padding: 1rem 1.2rem !important;
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    border-radius: 10px !important;
     margin-top: auto !important;
-    margin-bottom: 6px !important;
-    border-radius: 8px !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .gath-box-features-list li {
+    font-size: 1.3rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0.7rem !important;
   }
 
   .gath-box-card-actions {
     margin-top: 0 !important;
+    padding-top: 0.4rem !important;
   }
 
   .gath-box-btn-wa {
-    padding: 8px 8px !important;
-    font-size: 11px !important;
-    border-radius: 8px !important;
-    gap: 4px !important;
-    text-align: center;
-    justify-content: center;
+    padding: 1.1rem 1rem !important;
+    font-size: 1.35rem !important;
+    font-weight: 600 !important;
+    border-radius: 10px !important;
+    gap: 0.6rem !important;
   }
-  /* opsi paket end */
-  /* ==========================================
+
+  /* --- OB Interactive Board (768px) --- */
+  .ob-interactive-board {
+    padding: 2.4rem 2rem !important;
+  }
+
+  .ob-board-header {
+    gap: 1.6rem !important;
+    margin-bottom: 2.2rem !important;
+  }
+
+  .ob-board-title h3 {
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.6rem !important;
+  }
+
+  .ob-board-title p {
+    font-size: 1.4rem !important;
+    font-weight: 400 !important;
+    line-height: 1.55 !important;
+  }
+
+  .ob-tab-controls {
+    gap: 0.8rem !important;
+  }
+
+  .ob-tab-btn {
+    padding: 1rem 1.5rem !important;
+    font-size: 1.35rem !important;
+    font-weight: 600 !important;
+  }
+
+  .ob-tab-btn i {
+    font-size: 1.35rem !important;
+  }
+
+  .ob-feature-card {
+    padding: 1.8rem 1.6rem !important;
+  }
+
+  .ob-card-num {
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .ob-icon-badge {
+    width: 4rem !important;
+    height: 4rem !important;
+    font-size: 1.7rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .ob-feature-card h4 {
+    font-size: 1.75rem !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .ob-feature-card p {
+    font-size: 1.35rem !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+  }
+  .gath-custom-note {
+    width: auto !important;
+    margin: 0.8rem 2rem 0 2rem !important;
+    padding: 1.4rem 1.6rem !important;
+    border: 1px solid rgba(4, 30, 66, 0.12) !important;
+    border-left: 4px solid #facc15 !important;
+    border-radius: 12px !important;
+    align-items: flex-start !important;
+    font-size: 1.3rem !important;
+    line-height: 1.55 !important;
+  }
+}
+/* Mobile Portrait (Max-width: 450px) */
+@media (max-width: 450px) {
+  .gath-box-section {
+    padding: 2.5rem 0 !important;
+    overflow: hidden !important;
+  }
+
+  .gath-box-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .gath-title-wrapper {
+    padding: 0 16px !important;
+    margin-bottom: 1.5rem !important;
+    text-align: center !important;
+  }
+
+  .gath-title-wrapper h2 {
+    font-size: 1.75rem !important;
+    font-weight: 700 !important;
+  }
+
+  .gath-box-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-padding-left: 16px !important;
+    gap: 14px !important;
+    padding: 4px 16px 20px 16px !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+
+  .gath-box-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .gath-box-card {
+    flex: 0 0 82% !important;
+    max-width: 82% !important;
+    scroll-snap-align: start !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+
+  .gath-box-card .gath-box-image-wrapper {
+    height: 165px !important;
+    min-height: 165px !important;
+  }
+
+  .gath-box-badge {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 4px 10px !important;
+    top: 10px !important;
+    left: 10px !important;
+  }
+
+  .gath-box-card-content {
+    padding: 16px 14px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+  }
+
+  .gath-box-card-content h3 {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .gath-box-intro-text {
+    font-size: 13.5px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    margin-bottom: 14px !important;
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    overflow: visible !important;
+  }
+
+  .gath-box-details-btn {
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    margin-top: auto !important;
+    margin-bottom: 8px !important;
+    border-radius: 10px !important;
+  }
+
+  .gath-box-features-list li {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 1.45 !important;
+    margin-bottom: 7px !important;
+  }
+
+  .gath-box-card-actions {
+    margin-top: 0 !important;
+    padding-top: 4px !important;
+  }
+
+  .gath-box-btn-wa {
+    padding: 11px 12px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    border-radius: 10px !important;
+    gap: 6px !important;
+    text-align: center !important;
+    justify-content: center !important;
+
+    .gath-custom-note {
+      width: auto !important;
+      margin: 4px 16px 0 16px !important;
+      padding: 12px 14px !important;
+      border: 1px solid rgba(4, 30, 66, 0.12) !important;
+      border-left: 3.5px solid #facc15 !important;
+      border-radius: 10px !important;
+      align-items: flex-start !important;
+      font-size: 12px !important;
+      line-height: 1.5 !important;
+      gap: 8px !important;
+    }
+  }
+
+  /* opsi paket end */ /* ==========================================
    GATH MODULE END
    ========================================== */
 
